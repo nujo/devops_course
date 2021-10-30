@@ -15,8 +15,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        platforms: ["ubuntu-latest", "macos-latest"]
-        python-version: ["3.8", "3.9", "3.10"]
+        platforms: ["ubuntu-latest"]
+        python-version: ["3.8"]
     runs-on: ${{ matrix.platforms }}
     steps:
     - uses: actions/checkout@v2
@@ -38,3 +38,12 @@ jobs:
     - name: Test with pytest
       run: |
         pytest test.py
+    - name: Verify docker is installed
+      run: docker run hello-world
+    - name: Dockerize
+      if: success()
+      uses: manusa/actions-publish-docker@v1.1.2
+      with:
+        name: mykolasb/devops_course
+        username: ${{ secrets.docker_usr }}
+        password: ${{ secrets.docker_passw }}

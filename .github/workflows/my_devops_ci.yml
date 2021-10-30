@@ -44,6 +44,6 @@ jobs:
       if: success()
       uses: manusa/actions-publish-docker@v1.1.2
       with:
-        name: organization/image_name
+        name: mykolasb/devops_course
         username: ${{ secrets.docker_usr }}
         password: ${{ secrets.docker_passw }}

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: mykpod
+  labels:
+    app: flask
+spec:
+  template:
+    metadata:
+      name: mykpod
+      labels:
+        app: flask
+    spec:
+      containers:
+        - name: mykpod
+          image: mykolasb/devops_course:main
+  replicas: 3
+  selector:
+    matchLabels:
+      app: flask

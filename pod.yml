@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: myk_pod
+  name: mykpod
   labels:
     app: flask
 spec:
   containers:
-    - name: myk_pod
+    - name: mykpod
       image: mykolasb/devops_course:main

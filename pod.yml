@@ -7,4 +7,4 @@ metadata:
 spec:
   containers:
     - name: myk_pod
-      image: mykolasb/devops_course
+      image: mykolasb/devops_course:main
